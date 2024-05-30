@@ -26,13 +26,9 @@ public class ArrayUtils_2 {
         for (int i = 0; i < mas.length; i++) {
             System.out.printf("%d", mas[i]);
             System.out.print(",\t");
-
-
-
-    }
+        }
         System.out.println();
     }
-
 
     //знажодження найменшого елементу
     public static int findMin(int[] mas) {
