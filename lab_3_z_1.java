@@ -6,14 +6,31 @@ public class lab_3_z_1 {
     public static void main(String[] args) {
         while (true) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("введіть n:");
-        int n = scan.nextInt();
+        int n;
+            while (true) {
+                System.out.println("Введіть n:");
+                if (scan.hasNextInt()) {
+                    n = scan.nextInt();
+                    break;
+                } else {
+                    System.out.println("Помилка: введене значення не є числом. Спробуйте ще раз.");
+                    scan.next(); // повторення вводу
+                }
+            }
 
         int[] mas = new int[n];
         for(int i=0; i<mas.length; i++){
-            System.out.println("введіть елемент масиву №"+i);
-            int elem = scan.nextInt();
-            mas[i]=elem;
+            while (true) {
+                System.out.println("Введіть елемент масиву №" + i);
+                if (scan.hasNextInt()) {
+                    int elem = scan.nextInt();
+                    mas[i] = elem;
+                    break;
+                } else {
+                    System.out.println("Помилка: введене значення не є числом. Спробуйте ще раз.");
+                    scan.next(); // Очищення неправильного вводу
+                }
+            }
 
         }
         int min=0;
