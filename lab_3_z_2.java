@@ -5,11 +5,20 @@ public class lab_3_z_2 {
     public static void main(String[] args) {
         while (true) {
             Scanner scan = new Scanner(System.in);
-            System.out.println("введіть n:");
-            int n = scan.nextInt();
+
+            int n = 0;
+            while (true) {
+                System.out.println("Введіть n:");
+                if (scan.hasNextInt()) {
+                    n = scan.nextInt();
+                    break;
+                } else {
+                    System.out.println("Помилка: введене значення не є числом. Спробуйте ще раз.");
+                    scan.next(); // повторення вводу
+                }
+            }
 
             int[] mas = ArrayUtils.readArray(scan, n);
-
             int m = ArrayUtils.countNegativeElements(mas);
             int minIn = ArrayUtils.findMin(mas);
             int sumMin = ArrayUtils.sumAfterMin(mas, minIn);
